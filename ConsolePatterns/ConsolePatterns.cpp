@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include <iostream>
+#include <memory>
 #include "factory_method.h"
 
 
@@ -14,7 +15,9 @@ int main()
 
 	cout << "============================================================================================\n";
 	FactoryMethod fm;
-	fm.run();
+	fm.run(2);
+	cout << "============================================================================================\n";
+
 
     return 0;
 }
