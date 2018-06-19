@@ -2,7 +2,7 @@
 
 struct AbstractProduct
 {
-	~AbstractProduct() {}
+	~AbstractProduct() { std::cout << "product was deleted...\n"; }
 	virtual void method() = 0;
 };
 
@@ -24,7 +24,7 @@ struct ConcreteProductC : AbstractProduct
 struct AbstractFactory
 {
 	virtual AbstractProduct* BuildProduct() = 0;
-	~AbstractFactory() {}
+	~AbstractFactory() { std::cout << "factory was deleted...\n"; }
 };
 
 
