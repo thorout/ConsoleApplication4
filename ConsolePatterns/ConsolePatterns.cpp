@@ -2,15 +2,20 @@
 //
 
 #include "stdafx.h"
-#include <conio.h>
 #include <iostream>
+#include "factory_method.h"
 
+
+using std::cout;
 
 int main()
 {
 	std::cout << "Hello\n";
 
-	_getch();
+	cout << "============================================================================================\n";
+	FactoryMethod fm;
+	fm.run();
+
     return 0;
 }
 
