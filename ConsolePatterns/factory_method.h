@@ -1,5 +1,8 @@
 #pragma once
 
+
+namespace { int iii = 0; }
+
 struct AbstractProduct
 {
 	~AbstractProduct() { std::cout << "product was deleted...\n"; }
@@ -23,24 +26,24 @@ struct ConcreteProductC : AbstractProduct
 
 struct AbstractFactory
 {
-	virtual AbstractProduct* BuildProduct() = 0;
+	virtual AbstractProduct* FactoryMethod() = 0;
 	~AbstractFactory() { std::cout << "factory was deleted...\n"; }
 };
 
 
 struct ConcreteFactoryA : AbstractFactory
 {
-	AbstractProduct* BuildProduct() { return new ConcreteProductA; }
+	AbstractProduct* FactoryMethod() { return new ConcreteProductA; }	//Factory method
 };
 
 struct ConcreteFactoryB : AbstractFactory
 {
-	AbstractProduct* BuildProduct() { return new ConcreteProductB; }
-};
+	AbstractProduct* FactoryMethod() { return new ConcreteProductB; }	//Factory method
+}; 
 
 struct ConcreteFactoryC : AbstractFactory
 {
-	AbstractProduct* BuildProduct() { return new ConcreteProductC; }
+	AbstractProduct* FactoryMethod() { return new ConcreteProductC; }	//Factory method
 };
 
 //-----------------------------------------------------------
@@ -62,12 +65,13 @@ struct FactoryMethod
 			break;
 		}
 
-
-		//Unchanged area ======
-		std::shared_ptr<AbstractProduct> product(factory->BuildProduct());
-		product->method();
-		//Unchanged area ======
-
+		{
+			//Unchanged area ======
+			std::shared_ptr<AbstractProduct> product(factory->FactoryMethod());
+			product->method();
+			//Unchanged area ======
+		}
+		std::cout << "Program terminated...\n";
 
 	}
 }; 
