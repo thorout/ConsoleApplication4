@@ -2,6 +2,8 @@
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 #include "myclass.h"
+#include "Prototype.h"
+
 using namespace ::testing;
 
 class MockMyClass : public IMyClass
@@ -9,6 +11,13 @@ class MockMyClass : public IMyClass
 public:
 	MOCK_METHOD0(someAction, int());
 };
+
+class MockPrototype : public IMyClass
+{
+public:
+	MOCK_METHOD0(someAction, int());
+};
+
 
 TEST(testcase, testname01)
 {

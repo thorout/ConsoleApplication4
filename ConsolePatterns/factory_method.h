@@ -50,6 +50,7 @@ struct ConcreteFactoryC : AbstractFactory
 
 struct FactoryMethod
 {
+	FactoryMethod() { std::cout << "Pattern \"Factory Method\"\n"; }
 	void run(int kind_of) 
 	{
 		std::cout << "Factory Method pattern\n";

@@ -88,7 +88,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\admin\Documents\Visual Studio 2015\Projects\ConsoleApplication4\ConsoleApplication4;C:\!Data\CppLibs\gtest-gmock.min\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>\ConsoleApplication4;C:\!Data\CppLibs\gtest-gmock.min\include;$(AllProjectOutputGroupsDependsOn);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -153,6 +153,9 @@
   <ItemGroup>
     <ProjectReference Include="..\ConsoleApplication4\ConsoleApplication4.vcxproj">
       <Project>{d70e6e00-63b1-4ae0-834b-df15c2432e3a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ConsolePatterns\ConsolePatterns.vcxproj">
+      <Project>{bc2dde29-b5a4-4f8e-b0d0-7edf0627962e}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
