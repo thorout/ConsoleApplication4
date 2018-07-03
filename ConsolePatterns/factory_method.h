@@ -53,6 +53,7 @@ struct FactoryMethod
 	FactoryMethod() { std::cout << "Pattern \"Factory Method\"\n"; }
 	void run(int kind_of) 
 	{
+		
 		std::cout << "Factory Method pattern\n";
 
 		std::shared_ptr<AbstractFactory> factory;
@@ -72,7 +73,7 @@ struct FactoryMethod
 			product->method();
 			//Unchanged area ======
 		}
-		std::cout << "Program terminated...\n";
+		std::cout << ">>> Whole Pattern was terminated...\n";
 
 	}
 }; 
