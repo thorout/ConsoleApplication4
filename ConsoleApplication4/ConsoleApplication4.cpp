@@ -17,8 +17,14 @@ struct A
 struct B : A
 {
 	void method() override { std::cout << "method\n"; }
+
 };
 
+
+void foo(A& b)
+{
+	b.method();
+}
 
 int main()
 {
@@ -28,8 +34,8 @@ int main()
 	assert(3 == 3 && "We need to do some..."); //Here is a Comment
 	static_assert(sizeof(short) == 2, "Wau-wauwe have a problem.");
 
-	A* b = new B;
-	b->method();
+	//A* b = new B;
+	//b->method();
 
 
 	int key;
@@ -38,6 +44,10 @@ int main()
 		std::cout << key << "\n";
 	}
 
+	B bb;
+	A& aa = bb;
+	foo(aa);
+	foo(bb);
 
 
 	return 0;
