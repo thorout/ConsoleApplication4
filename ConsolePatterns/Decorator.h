@@ -2,34 +2,34 @@
 #include <iostream>
 
 
-class Component
+class ComponentBase
 {
 public:
-	virtual ~Component() { }
+	virtual ~ComponentBase() { }
 	virtual void Operation() = 0;
 };
 
 
-class ConcreteComponent : public Component
+class ConcreteComponent : public ComponentBase
 {
 public:
-	void Operation() override { std::cout << "Concrete Component method." << std::endl; }
-	void SomeComponentMethod() { std::cout << "Concrete Component method2." << std::endl; }
+	void Operation() override { std::cout << "Concrete ComponentBase method." << std::endl; }
+	void SomeComponentMethod() { std::cout << "Concrete ComponentBase method2." << std::endl; }
 };
 
-class DecoratorComponent : public Component
+class DecoratorComponent : public ComponentBase
 {
 public:
-	explicit DecoratorComponent(Component* component) : component_(component) {	}
+	explicit DecoratorComponent(ComponentBase* component) : component_(component) {	}
 	void Operation() override { component_->Operation(); }
 private:
-	Component* component_;
+	ComponentBase* component_;
 };
 
 class ConcreteDecoratorA : public DecoratorComponent
 {
 public:
-	ConcreteDecoratorA(Component* component) : DecoratorComponent(component) { }
+	ConcreteDecoratorA(ComponentBase* component) : DecoratorComponent(component) { }
 	void Operation() override
 	{
 		std::cout << "Concrete Decorator A Operation." << std::endl;
@@ -40,7 +40,7 @@ public:
 class ConcreteDecoratorB : public DecoratorComponent
 {
 public:
-	ConcreteDecoratorB(Component* component) : DecoratorComponent(component) { }
+	ConcreteDecoratorB(ComponentBase* component) : DecoratorComponent(component) { }
 	void Operation() override
 	{
 		std::cout << "Concrete Decorator B Operation." << std::endl;
