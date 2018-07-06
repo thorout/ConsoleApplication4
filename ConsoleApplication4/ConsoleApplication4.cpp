@@ -6,6 +6,7 @@
 #include "myclass.h"
 #include <cassert>
 #include <conio.h>
+#include <ratio>
 
 
 
@@ -32,7 +33,7 @@ int main()
 	IMyClass mycl;
 	std::cout << mycl.someAction() << "\n";
 	assert(3 == 3 && "We need to do some..."); //Here is a Comment
-	static_assert(sizeof(short) == 2, "Wau-wauwe have a problem.");
+	static_assert(sizeof(short) == 2, "Wau-wau! We have a problem.");
 
 	//A* b = new B;
 	//b->method();
@@ -49,10 +50,9 @@ int main()
 	foo(aa);
 	foo(bb);
 
+	std::cout << std::milli::num << "/" << std::milli::den << " " << std::milli << std::endl;
+
 
 	return 0;
-	
-
 }
 
- 
