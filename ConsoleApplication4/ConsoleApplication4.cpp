@@ -50,7 +50,7 @@ int main()
 	foo(aa);
 	foo(bb);
 
-	std::cout << std::milli::num << "/" << std::milli::den << " " << std::milli << std::endl;
+	std::cout << std::milli::num << "/" << std::milli::den << std::endl;
 
 
 	return 0;
