@@ -2,6 +2,7 @@
 ///#include <iomanip>
 #include <vector>
 #include <algorithm>
+#include <stdexcept>
 
 class Component
 {
@@ -17,9 +18,9 @@ class Leaf : public Component
 {
 public:
 	virtual ~Leaf()	{ }
-	virtual void add(Component* comp) override { throw std::exception("Not supported method\n"); }
-	virtual void remove(Component* comp) override { throw std::exception("Not supported method\n"); }
-	virtual Component* getChild(int i) override { throw std::exception("Not supported method\n"); }
+	virtual void add(Component* comp) override { throw std::logic_error("Not supported method\n"); }
+	virtual void remove(Component* comp) override { throw std::logic_error("Not supported method\n"); }
+	virtual Component* getChild(int i) override { throw std::logic_error("Not supported method\n"); }
 	virtual void printName() override { std::cout << this->name;  }
 private:
 	static int counter;
