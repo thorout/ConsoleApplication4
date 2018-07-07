@@ -45,6 +45,9 @@
     <ClInclude Include="Decorator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Flyweight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -69,6 +72,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Decorator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Flyweight.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
