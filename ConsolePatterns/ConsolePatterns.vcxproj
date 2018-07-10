@@ -149,6 +149,7 @@
     <ClInclude Include="Bridge.h" />
     <ClInclude Include="Builder.h" />
     <ClInclude Include="ChainOfResponsibility.h" />
+    <ClInclude Include="Command.h" />
     <ClInclude Include="Composite.h" />
     <ClInclude Include="Decorator.h" />
     <ClInclude Include="factory_method.h" />
@@ -163,6 +164,7 @@
     <ClCompile Include="Bridge.cpp" />
     <ClCompile Include="Builder.cpp" />
     <ClCompile Include="ChainOfResponsibility.cpp" />
+    <ClCompile Include="Command.cpp" />
     <ClCompile Include="Composite.cpp" />
     <ClCompile Include="ConsolePatterns.cpp" />
     <ClCompile Include="Decorator.cpp" />

@@ -14,6 +14,7 @@
 #include "Flyweight.h"
 #include "Proxy.h"
 #include "ChainOfResponsibility.h"
+#include "Command.h"
 
 using std::cout;
 
@@ -69,6 +70,11 @@ int main()
 	cout << "============================================================================================\n";
 	ChainOfResponsibility chainOfResponsibility;
 	chainOfResponsibility.run();
+	cout << "============================================================================================\n";
+
+	cout << "============================================================================================\n";
+	Command command;
+	command.run();
 	cout << "============================================================================================\n";
 
 	return 0;
