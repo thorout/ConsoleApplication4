@@ -13,6 +13,7 @@
 #include "Decorator.h"
 #include "Flyweight.h"
 #include "Proxy.h"
+#include "ChainOfResponsibility.h"
 
 using std::cout;
 
@@ -63,6 +64,11 @@ int main()
 	cout << "============================================================================================\n";
 	Proxy proxy;
 	proxy.run();
+	cout << "============================================================================================\n";
+
+	cout << "============================================================================================\n";
+	ChainOfResponsibility chainOfResponsibility;
+	chainOfResponsibility.run();
 	cout << "============================================================================================\n";
 
 	return 0;

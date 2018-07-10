@@ -1,6 +1,7 @@
 #include "Flyweight.h"
 #include <vector>
 #include <unordered_map>
+#include <typeinfo>
 
 
 
@@ -26,6 +27,9 @@ void Flyweight::run()
 	auto it = flyweights.find(1);
 	if (it != flyweights.end())
 	{
+		std::cout << typeid(it->second).name() << std::endl;
+		std::cout << typeid(*it->second).name() << std::endl;
+
 		try
 		{
 			auto pflyw = it->second;
