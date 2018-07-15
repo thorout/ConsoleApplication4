@@ -4,7 +4,7 @@
 
 Mediator::Mediator()
 {
-	std::cout << "Pattern \"Command\"\n";
+	std::cout << "Pattern \"Mediator\"\n";
 }
 
 

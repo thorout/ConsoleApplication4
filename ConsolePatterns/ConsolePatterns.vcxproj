@@ -155,6 +155,7 @@
     <ClInclude Include="factory_method.h" />
     <ClInclude Include="Flyweight.h" />
     <ClInclude Include="Mediator.h" />
+    <ClInclude Include="Memento.h" />
     <ClInclude Include="Prototype.h" />
     <ClInclude Include="Proxy.h" />
     <ClInclude Include="stdafx.h" />
@@ -171,6 +172,7 @@
     <ClCompile Include="Decorator.cpp" />
     <ClCompile Include="Flyweight.cpp" />
     <ClCompile Include="Mediator.cpp" />
+    <ClCompile Include="Memento.cpp" />
     <ClCompile Include="Prototype.cpp" />
     <ClCompile Include="Proxy.cpp" />
     <ClCompile Include="stdafx.cpp" />
