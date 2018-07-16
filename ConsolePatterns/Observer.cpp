@@ -28,5 +28,9 @@ void Observer::run()
 	subject.Dettach(&observerB);
 	subject.Notify();
 
+	subject.SetState({ 10,20,30 });
+	subject.Attach(&observerB);
+	subject.SetState({ 100,200,300 });
+
 	std::cout << ">>> Whole Pattern was terminated...\n";
 }

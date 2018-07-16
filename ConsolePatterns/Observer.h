@@ -3,6 +3,15 @@
 #include <vector>
 #include <algorithm>
 
+class ISubject;
+
+struct SubjectState
+{
+	int someData01;
+	int someData02;
+	int someData03;
+};
+
 class IObserver
 {
 public:
@@ -14,7 +23,7 @@ public:
 	{
 	}
 
-	virtual void Update() = 0;
+	virtual void Update(ISubject* observer) = 0;
 
 private:
 
@@ -51,9 +60,11 @@ public:
 	{
 		for (auto observer : observers)
 		{
-			observer->Update();
+			observer->Update(this);
 		}
 	}
+
+	virtual const SubjectState& GetState() = 0;
 
 private:
 	std::vector<IObserver*> observers;
@@ -63,16 +74,31 @@ private:
 class ConcreteSubject : public ISubject
 {
 public:
-	ConcreteSubject()
+	ConcreteSubject() 
 	{
+		std::cout << "ConcreteSubject() started." << std::endl;
+		state_.someData01 = 1;
+		state_.someData02 = 2;
+		state_.someData03 = 3;
 	}
 
 	~ConcreteSubject()
 	{
 	}
 
-private:
+	const SubjectState& GetState() override
+	{
+		return state_;
+	}
 
+	void SetState(const SubjectState& state)
+	{
+		state_ = state;
+		Notify();
+	}
+
+private:
+	SubjectState state_;
 };
 
 class ConcreteObserverA : public IObserver
@@ -85,13 +111,14 @@ public:
 	~ConcreteObserverA()
 	{
 	}
-	void Update() override
+	void Update(ISubject* observer) override
 	{
-		std::cout << "ConcreteObserverA: \"I've received a message.\"" << std::endl;	
+		SubjectState state = observer->GetState();
+		std::cout << "ConcreteObserverA: \"I've notified >> \"" << state.someData01 << " " << state.someData02 << " " << state.someData03 << " " << std::endl;
 	}
 
 private:
-
+	IObserver* observer_;
 };
 
 class ConcreteObserverB : public IObserver
@@ -105,9 +132,10 @@ public:
 	{
 	}
 
-	void Update() override
+	void Update(ISubject* observer) override
 	{
-		std::cout << "ConcreteObserverB: \"I've received a message.\"" << std::endl;
+		SubjectState state = observer->GetState();
+		std::cout << "ConcreteObserverB: \"I've notified >> \"" << state.someData01 << " " << state.someData02 << " " << state.someData03 << " " << std::endl;
 	}
 
 private:
@@ -125,9 +153,10 @@ public:
 	{
 	}
 
-	void Update() override
+	void Update(ISubject* observer) override
 	{
-		std::cout << "ConcreteObserverC: \"I've received a message.\"" << std::endl;
+		SubjectState state = observer->GetState();
+		std::cout << "ConcreteObserverC: \"I've notified >> \"" << state.someData01 << " " << state.someData02 << " " << state.someData03 << " " << std::endl;
 	}
 
 private:
