@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 
-class State
+class DataState
 {
 public:
 	int data01_ = 1;
@@ -22,16 +22,16 @@ private:
 	{
 	}
 
-	void SetState(State* state) 
+	void SetState(DataState* state) 
 	{
-		state_ = new State(*state); 
+		state_ = new DataState(*state); 
 	}
-	State* GetState() 
+	DataState* GetState() 
 	{
 		return state_;
 	}
 
-	State* state_;
+	DataState* state_;
 };
 
 
@@ -40,7 +40,7 @@ class Originator
 public:
 	Originator()
 	{
-		state_ = new State();
+		state_ = new DataState();
 		state_->data01_ = 10;
 		state_->data02_ = 20;
 	}
@@ -74,7 +74,7 @@ public:
 	}
 
 private:
-	State* state_;
+	DataState* state_;
 };
 
 
