@@ -2,6 +2,7 @@
 //
 
 #include "stdafx.h"
+#include "C:\Program Files (x86)\Visual Leak Detector\include\vld.h"
 #include <iostream>
 #include <memory>
 #include "factory_method.h"
@@ -19,6 +20,7 @@
 #include "Memento.h"
 #include "Observer.h"
 #include "State.h"
+#include "Strategy.h"
 
 using std::cout;
 
@@ -99,6 +101,11 @@ int main()
 	cout << "============================================================================================\n";
 	State state;
 	state.run();
+	cout << "============================================================================================\n";
+
+	cout << "============================================================================================\n";
+	Strategy strategy;
+	strategy.run();
 	cout << "============================================================================================\n";
 
 	return 0;
