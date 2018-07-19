@@ -1,8 +1,8 @@
 // ConsolePatterns.cpp : Defines the entry point for the console application.
 //
 
-#include "stdafx.h"
 #include "C:\Program Files (x86)\Visual Leak Detector\include\vld.h"
+#include "stdafx.h"
 #include <iostream>
 #include <memory>
 #include "factory_method.h"

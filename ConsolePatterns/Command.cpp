@@ -27,11 +27,13 @@ void Command::run()
 	std::cout << " >>> " << doc.GetText() << std::endl;
 	menu.Click();
 	history.Push(command);
+	delete command;
 	std::cout << " >>> " << doc.GetText() << std::endl;
 	//command->unexecute();
-	history.Pop()->unexecute();
+	command = history.Pop();
+	command->unexecute();
 	std::cout << " >>> " << doc.GetText() << std::endl;
-	
+	delete command;
 
 	std::cout << ">>> Whole Pattern was terminated...\n";
 }

@@ -20,6 +20,10 @@ public:
 class DecoratorComponent : public ComponentBase
 {
 public:
+	~DecoratorComponent()
+	{
+		delete component_;
+	}
 	explicit DecoratorComponent(ComponentBase* component) : component_(component) {	}
 	void Operation() override { component_->Operation(); }
 private:

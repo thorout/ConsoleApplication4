@@ -20,5 +20,6 @@ void Decorator::run()
 	comp1 = new ConcreteDecoratorA(new ConcreteDecoratorB(comp1));
 	comp1->Operation();
 	dynamic_cast<ConcreteComponent*>(comp1)->SomeComponentMethod();
+	delete comp1;
 	std::cout << ">>> Whole Pattern was terminated...\n";
 }

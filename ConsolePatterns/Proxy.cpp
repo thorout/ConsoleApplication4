@@ -20,6 +20,10 @@ public:
 class ProxyClass : public Subject
 {
 public:
+	~ProxyClass()
+	{
+		delete pointerToRealObject;
+	}
 	void RequestComplexData() override
 	{
 		std::cout << std::endl << "Proxy object trapping real method and redirect to real object!" << std::endl;

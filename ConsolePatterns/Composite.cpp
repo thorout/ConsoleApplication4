@@ -17,7 +17,7 @@ public:
 class Leaf : public Component
 {
 public:
-	virtual ~Leaf()	{ }
+	virtual ~Leaf() { std::cout << "~Leaf()\n"; }
 	virtual void add(Component* comp) override { throw std::logic_error("Not supported method\n"); }
 	virtual void remove(Component* comp) override { throw std::logic_error("Not supported method\n"); }
 	virtual Component* getChild(int i) override { throw std::logic_error("Not supported method\n"); }
@@ -32,7 +32,11 @@ int Leaf::counter = 0;
 class CompositeClass : public Component
 {
 public:
-	virtual ~CompositeClass() {	}
+	virtual ~CompositeClass() 
+	{ 
+		std::cout << "~CompositeClass()\n";
+		for (auto leaf : leafs) delete(leaf);
+	}
 	virtual void add(Component* comp) override { leafs.push_back(comp); }
 	virtual void remove(Component* comp) override 
 	{
@@ -94,5 +98,6 @@ void Composite::run()
 	}
 
 	delete root;
+
 	std::cout << ">>> Whole Pattern was terminated...\n";
 }
