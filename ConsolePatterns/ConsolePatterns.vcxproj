@@ -164,6 +164,7 @@
     <ClInclude Include="Strategy.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TemplateMethod.h" />
+    <ClInclude Include="Visitor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Adapter.cpp" />
@@ -184,6 +185,7 @@
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="Strategy.cpp" />
     <ClCompile Include="TemplateMethod.cpp" />
+    <ClCompile Include="Visitor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

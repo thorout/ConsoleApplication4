@@ -1,7 +1,10 @@
 // ConsolePatterns.cpp : Defines the entry point for the console application.
 //
 
+#ifdef _DEBUG
 #include "C:\Program Files (x86)\Visual Leak Detector\include\vld.h"
+#endif	//_DEBUG
+
 #include "stdafx.h"
 #include <iostream>
 #include <memory>
@@ -22,7 +25,7 @@
 #include "State.h"
 #include "Strategy.h"
 #include "TemplateMethod.h"
-
+#include "Visitor.h"
 using std::cout;
 
 int main()
@@ -112,6 +115,11 @@ int main()
 	cout << "============================================================================================\n";
 	TemplateMethod template_method;
 	template_method.run();
+	cout << "============================================================================================\n";
+
+	cout << "============================================================================================\n";
+	Visitor visitor;
+	visitor.run();
 	cout << "============================================================================================\n";
 
 	return 0;
